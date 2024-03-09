@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Upload Form</title>
+<link rel="stylesheet" href="./img-upload.css"/>
+</head>
+<body>
+
+<div class="container">
+  <h2>Upload Your Crop Image</h2>
+
+  <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+    <div class="form-group">
+      <input type="file" name="image" id="imageInput" accept="image/*">
+      <label for="imageInput" id="imageInputLabel">Choose Image</label>
+      <span class="error-message" id="imageError"></span>
+    </div>
+    <button type="submit" id="uploadBtn">Upload</button>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="upload-message" id="uploadMessage"></div>
+  </form>
+</div>
+
+<script src="./img-upload.js"></script>
+</body>
+</html>
+

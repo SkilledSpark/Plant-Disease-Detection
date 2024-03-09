@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-section {
+    padding: 50px 0;
+    background-image: url('./contact-img.png'); /* Replace 'background-image.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition for border color and transform */
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #007bff;
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transition for background color and transform */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Move up on hover */
+}
+
+.contact-form button:active {
+    transform: translateY(1px); /* Add animation on button click */
+}
+
+/* Additional animations */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.contact-form input[type="text"]:focus::placeholder,
+.contact-form input[type="email"]:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: transparent; /* Hide placeholder text on focus */
+}
+
+.contact-form input[type="text"]:hover::placeholder,
+.contact-form input[type="email"]:hover::placeholder,
+.contact-form textarea:hover::placeholder {
+    color: #ccc; /* Change placeholder text color on hover */
+}
+
+
+
+

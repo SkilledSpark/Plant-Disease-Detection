@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css"/>
+  </head>
+  <body>
+    <div class="main_box">
+      <input type="checkbox" id="check" />
+      <div class="btn_one">
+        <label for="check" style="color: white">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <div class="sidebar_menu">
+        <div class="logo" id="log">
+          <a href="#">Ctrl Freaks</a>
+        </div>
+
+        <div class="btn_two">
+          <label for="check" style="color: grey">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="#image-upload-crop">Upload Crop Image</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-photo-film"></i>
+              <a href="#Aboutus">About us</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="#contactus">Contact Us</a>
+            </li>
+            <li>
+              <i class="fa-regular fa-comments"></i>
+              <a href="#feedback-part">Feedback</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="social_media">
+          <ul>
+            <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section id="image-upload-crop" class="img-upload">
+      <div class="container">
+        <h2>Upload Your Crop Image</h2>
+      
+        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+          <div class="form-group">
+            <input type="file" name="image" id="imageInput" accept="image/*">
+            <label for="imageInput" id="imageInputLabel">Choose Image</label>
+            <span class="error-message" id="imageError"></span>
+          </div>
+          <button type="submit" id="uploadBtn">Upload</button>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="upload-message" id="uploadMessage"></div>
+        </form>
+      </div>
+      <script src="./img-upload.js"></script>
+    </section>
+
+
+    <section id="Aboutus" class="about-section">
+      <div class="about-container">
+        <h2 class="about-title">About Us</h2>
+        <div class="about-content">
+          <div class="about-text-container">
+            <p class="about-paragraph">We are a team of passionate individuals dedicated to revolutionizing crop health management through innovative technology solutions. Our mission is to empower farmers worldwide with accessible and actionable insights for sustainable agriculture.</p>
+            <p class="about-paragraph">With expertise in machine learning, web development, and agricultural sciences, we are committed to delivering robust and user-friendly platforms that address the challenges faced by farmers and contribute to the advancement of agriculture.</p>
+            <a href="#" class="about-button">Learn More</a>
+          </div>
+          <div class="about-image-container">
+            <img class="team-photo" src="./team-photo.png" alt="Team Photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactus" class="contact-section">
+      <div class="contact-container">
+        <h2 class="contact-title">Contact Us</h2>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-part" class="feedback-section">
+      <div class="feedback-container">
+        <h2 class="feedback-title">Feedback Form</h2>
+        
+        <!-- Existing Feedbacks -->
+        <div class="existing-feedbacks">
+          <div class="feedback-card">
+            <img src="feedback1.png" alt="Feedback 1">
+            <div class="feedback-details">
+              <h3>John Doe</h3>
+              <p>"Great service! Highly recommend."</p>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+          <div class="feedback-card">
+            <img src="feedback2.png" alt="Feedback 2">
+            <div class="feedback-details">
+              <h3>Jane Smith</h3>
+              <p>"Excellent experience. Will definitely use again!"</p>
+              <div class="rating">★★★★☆</div>
+            </div>
+          </div>
+          <div class="feedback-card">
+            <img src="feedback3.png" alt="Feedback 3">
+            <div class="feedback-details">
+              <h3>Michael Johnson</h3>
+              <p>"Outstanding service. Thank you!"</p>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- User Feedback Form -->
+        <div class="user-feedback">
+          <h3>Leave Your Feedback</h3>
+          <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Feedback" required></textarea>
+            <label for="rating">Rating:</label>
+            <select name="rating" id="rating" required>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★☆</option>
+              <option value="3">★★★☆☆</option>
+              <option value="2">★★☆☆☆</option>
+              <option value="1">★☆☆☆☆</option>
+            </select>
+            <button type="submit">Submit Feedback</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

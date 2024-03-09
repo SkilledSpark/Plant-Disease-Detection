@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+<section class="feedback-section">
+  <div class="feedback-container">
+    <h2 class="feedback-title">Feedback Form</h2>
+    
+    <!-- Existing Feedbacks -->
+    <div class="existing-feedbacks">
+      <div class="feedback-card">
+        <img src="feedback1.png" alt="Feedback 1">
+        <div class="feedback-details">
+          <h3>John Doe</h3>
+          <p>"Great service! Highly recommend."</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <img src="feedback2.png" alt="Feedback 2">
+        <div class="feedback-details">
+          <h3>Jane Smith</h3>
+          <p>"Excellent experience. Will definitely use again!"</p>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+      <div class="feedback-card">
+        <img src="feedback3.png" alt="Feedback 3">
+        <div class="feedback-details">
+          <h3>Michael Johnson</h3>
+          <p>"Outstanding service. Thank you!"</p>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- User Feedback Form -->
+    <div class="user-feedback">
+      <h3>Leave Your Feedback</h3>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Feedback" required></textarea>
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating" required>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+

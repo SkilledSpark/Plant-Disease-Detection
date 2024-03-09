@@ -1,0 +1,598 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins",sans-serif;
+}
+
+.main_box{
+    background-image: url(./crop-img1.png);
+    height: 100vh;
+    background-size: cover;
+}
+
+.btn_one i {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left:16px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.sidebar_menu{
+    position: fixed;
+    left: -350px;
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: 0 0 2px black;
+    transition: all 0.4s linear;
+}
+
+#log{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 55px;
+    height: 60px;
+    width: 80%;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .logo a:hover{
+    box-shadow: 2px 2px 4px black;
+}
+
+.sidebar_menu .menu{
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .btn_two i{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    left: 280px;
+    margin-top: 2px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+}
+
+.sidebar_menu .menu i,a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu li:hover{
+    box-shadow: 2px 2px 4px black;
+    font-size: larger;
+}
+
+.sidebar_menu .menu i{
+    padding-right: 8px;
+}
+
+.sidebar_menu .social_media{
+    color: black;
+    opacity: 0.6;
+    position: absolute;
+    left: 25%;
+    bottom: 20px;
+    padding: 0.5px;
+    height: 50px;
+}
+
+#check{
+    display: none;
+}
+
+.btn_one i:hover{
+    font-size: 40px;
+}
+
+.btn_two i:hover{
+    font-size: large;
+}
+
+.sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+#check:checked ~ .sidebar_menu {
+    left: 0px;
+}
+
+#check:checked ~ .btn_one i{
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  label#imageInputLabel {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  label#imageInputLabel:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: #ff0000;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .progress-bar-container {
+    margin-top: 20px;
+    height: 20px;
+    background-color: #f4f4f4;
+    border-radius: 3px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    border-radius: 3px;
+  }
+  
+  .upload-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .container {
+    opacity: 0.9;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+ #image-upload-crop {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./tomato2.png);
+    background-size: cover;
+    opacity: 0.9;
+  }
+
+  .about-section {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F6E3C1;
+    color: #333;
+    padding: 50px 0;
+}
+
+
+.about-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Hide overflow for smooth transition */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text-container {
+    flex: 1;
+}
+
+.about-paragraph {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF6B6B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.about-button:hover {
+    background-color: #F85252;
+}
+
+.about-image-container {
+    flex: 1;
+}
+
+.team-photo {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-photo:hover {
+    transform: scale(1.05);
+}
+
+.about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #FF6B6B, #F85252);
+    clip-path: polygon(0 0, 90% 0, 85% 97%, 0% 80%);
+    z-index: -1;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(0); /* Initial scale to 0 */
+}
+
+.about-container:hover::before {
+    transform: scale(1); /* Scale in on hover */
+}
+
+.about-container:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
+}
+
+#contactus {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.contact-section {
+    padding: 50px 0;
+    background-image: url('./contact-img.png'); /* Replace 'background-image.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    top: 150px;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition for border color and transform */
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #007bff;
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transition for background color and transform */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Move up on hover */
+}
+
+.contact-form button:active {
+    transform: translateY(1px); /* Add animation on button click */
+}
+
+/* Additional animations */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.contact-form input[type="text"]:focus::placeholder,
+.contact-form input[type="email"]:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: transparent; /* Hide placeholder text on focus */
+}
+
+.contact-form input[type="text"]:hover::placeholder,
+.contact-form input[type="email"]:hover::placeholder,
+.contact-form textarea:hover::placeholder {
+    color: #ccc; /* Change placeholder text color on hover */
+}
+
+
+.feedback-part {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Feedback Section */
+.feedback-section {
+    padding: 50px 0;
+}
+
+.feedback-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feedback-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+/* Existing Feedbacks */
+.existing-feedbacks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.feedback-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.feedback-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.feedback-details {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.feedback-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #FFD700;
+}
+
+/* User Feedback Form */
+.user-feedback {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-feedback h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-feedback form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.user-feedback input,
+.user-feedback textarea,
+.user-feedback select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.user-feedback input:focus,
+.user-feedback textarea:focus,
+.user-feedback select:focus {
+    border-color: #007bff;
+}
+
+.user-feedback button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.user-feedback button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Hover Effects */
+.feedback-card:hover {
+    transform: translateY(-5px);
+}
+
+.user-feedback input:hover,
+.user-feedback textarea:hover,
+.user-feedback select:hover,
+.user-feedback button:hover {
+    filter: brightness(90%);
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Transitions */
+.user-feedback input,
+.user-feedback textarea,
+.user-feedback select,
+.user-feedback button {
+    transition: all 0.3s ease;
+}
+
+  
+
