@@ -4,6 +4,44 @@
     font-family: "poppins",sans-serif;
 }
 
+  
+#containerr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #content {
+    text-align: center;
+   
+}
+  
+  #setttt {
+    margin-bottom: 10px;
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:48px;
+  }
+  
+  
+  .sidebar_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar_menu .logo {
+    margin-bottom: 20px; 
+  }
+  
+  .sidebar_menu .social_media {
+    margin-top: auto;
+  }
+  
+
 .main_box{
     background-image: url(./crop-img1.png);
     height: 100vh;
@@ -593,6 +631,9 @@ h2 {
 .user-feedback button {
     transition: all 0.3s ease;
 }
+
+  
+
 
   
 
