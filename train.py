@@ -10,6 +10,22 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 import pathlib
 
+class CustomLayer(keras.layers.Layer):
+    def __init__(self, arg1, arg2, **kwargs):
+        super().__init__(**kwargs)
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+    def get_config(self):
+        # Call the base class method to get the base config
+        config = super().get_config()
+        # Update the config with our custom arguments
+        config.update({
+            "arg1": self.arg1,
+            "arg2": self.arg2
+        })
+        return config
+
 # Training dir
 data_dir = r"C:\Users\Lakshya Singh\Documents\GitHub\PlantVillage-Dataset\raw\segmented\train"
 data_dir = pathlib.Path(data_dir)
@@ -56,7 +72,7 @@ for layer in pretrained_model.layers:
 
 resnet_model.add(pretrained_model)
 resnet_model.add(Flatten())
-resnet_model.add(Dense(512, activation='relu'))
+resnet_model.add(Dense(128, activation='relu'))
 resnet_model.add(Dense(38, activation='softmax'))
 
 resnet_model.summary()
