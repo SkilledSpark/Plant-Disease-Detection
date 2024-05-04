@@ -1,5 +1,4 @@
 require('dotenv').config();
-const sharp = require('sharp');
 const express = require("express");
 const app = express();
 const PORT = 8080;
@@ -7,25 +6,12 @@ const PORT = 8080;
 const tf = require('@tensorflow/tfjs');
 const multer = require('multer');
 
-// const mongoose = require("mongoose");
-// // Connect to database
-// mongoose.connect(process.env.DATABASE_URL, {
-//     useNewUrlParser: true
-// });
-// const db = mongoose.connection;
-// db.on("error", (error) => console.error(error));
-// db.once("open", () => console.log("Connected to database"));
-
-
 // Load TensorFlow model
-async function loadModel() 
-{
+async function loadModel() {
     try {
-        const model = await tf.loadLayersModel('path_to_model');
+        const model = await tf.loadLayersModel("C:/Users/Lakshya Singh/Documents/GitHub/PlantVillage-Dataset/raw/segmented/final/modelextra.keras");
         return model;
-    } 
-    catch (error) 
-    {
+    } catch (error) {
         console.error('Error loading model:', error);
         throw new Error('Error loading model');
     }
@@ -46,7 +32,7 @@ app.use(express.static('public'));
 // Routes
 app.listen(
     PORT,
-    () => console.log(`Server running on http://localhost:${PORT}`) 
+    () => console.log(`Server running on http://localhost:${PORT}`)
 );
 
 app.get('/', (req, res) => {
@@ -54,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/feedback', (req, res) => {
-    const {name, email, message} = req.body;
+    const { name, email, message } = req.body;
     if (name && email && message) {
         res.status(200).send({
             message: "Thank you for your feedback!"
@@ -66,7 +52,6 @@ app.post('/feedback', (req, res) => {
     }
 });
 
-
 // Configure multer for file uploads
 const upload = multer({ dest: 'uploads/' });
 
@@ -77,11 +62,8 @@ app.post('/predict', upload.single('image'), async (req, res) => {
             // Load TensorFlow model
             const model = await loadModel();
 
-            // Resize and normalize image
-            const processedImage = await processImage(file.path);
-
-            // Perform model prediction
-            const prediction = model.predict(processedImage);
+            // Perform model prediction directly on the image data
+            const prediction = model.predict(file.path);
 
             // Send prediction response
             res.status(200).send({
@@ -89,9 +71,9 @@ app.post('/predict', upload.single('image'), async (req, res) => {
                 prediction: prediction
             });
         } catch (error) {
-            console.error('Error processing or predicting image:', error);
+            console.error('Error predicting image:', error);
             res.status(500).send({
-                message: "Error processing or predicting image"
+                message: "Error predicting image"
             });
         }
     } else {
@@ -100,26 +82,3 @@ app.post('/predict', upload.single('image'), async (req, res) => {
         });
     }
 });
-
-async function processImage(imageData) 
-{
-    try 
-    {
-        // Resize image to 256x256 pixels
-        const resizedImage = await sharp(imageData)
-            .resize(256, 256)
-            .toBuffer();
-
-        // Convert image to JPEG format
-        const jpegImage = await sharp(resizedImage)
-            .jpeg()
-            .toBuffer();
-
-        return jpegImage;
-    } 
-    catch (error) 
-    {
-        console.error('Error pre-processing image:', error);
-        throw new Error('Error pre-processing image');
-    }
-}

@@ -1,60 +1,30 @@
-import os
+from keras.preprocessing import image
 import numpy as np
-import tensorflow as tf
-from keras.src.utils import load_img, img_to_array
+from keras.models import load_model
 
+img_path = r"C:\Users\Lakshya Singh\Documents\GitHub\PlantVillage-Dataset\raw\segmented\final\val\Tomato___Bacterial_spot\0b37769a-a451-4507-a236-f46348e3a9ac___GCREC_Bact.Sp 3265_final_masked.jpg"
+img = image.load_img(img_path)
 
-# from tensorflow.keras.preprocessing.image import load_img, img_to_array
+model = load_model(r"C:\Users\Lakshya Singh\Documents\GitHub\PlantVillage-Dataset\raw\segmented\final\model.h5")
 
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+predictions = model.predict(x)
+predicted_class_index = np.argmax(predictions)
+print(predictions)
+print(predicted_class_index)
 
-def load_validation_data_from_folder(folder_path, target_size=(224, 224)):
-    X_val = []
-    y_val = []
+class_labels = {
+    0: 'Early Blight Potato',
+    1: 'Healthy Potato',
+    2: 'Late Blight Potato',
+    3: 'Bacterial Spot Tomato',
+    4: 'Early Blight Tomato',
+    5: 'Healthy Tomato',
+    6: 'Late Blight Tomato'
+}
 
-    # Iterate through files in the folder
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
-
-        # Assuming the folder structure is such that each class has its own subfolder
-        class_label = os.path.basename(folder_path)
-
-        # Load image and preprocess
-        image = load_img(file_path, target_size=target_size)
-        image = img_to_array(image)
-        image /= 255.0  # Normalize pixel values
-
-        # Append image and label to the lists
-        X_val.append(image)
-        y_val.append(class_label)
-
-    # Convert lists to NumPy arrays
-    X_val = np.array(X_val)
-    y_val = np.array(y_val)
-
-    return X_val, y_val
-
-
-# Load your trained model
-model = tf.keras.models.load_model(r"C:\Users\Lakshya Singh\Documents\GitHub\PlantVillage-Dataset\raw\saved_model.pb")
-
-# Parent directory containing folders of validation data
-parent_dir = r"C:\Users\Lakshya Singh\Documents\GitHub\PlantVillage-Dataset\raw\segmented\val"
-
-# Iterate through all folders in the parent directory
-for folder in os.listdir(parent_dir):
-    folder_path = os.path.join(parent_dir, folder)
-
-    # Check if the item is a directory
-    if os.path.isdir(folder_path):
-        # Load validation data from the current folder
-        validation_data = load_validation_data_from_folder(folder_path)
-
-        # Unpack validation data
-        X_val, y_val = validation_data
-
-        # Evaluate the model on validation data
-        loss, accuracy = model.evaluate(X_val, y_val)
-
-        # Print the results
-        print(f'Validation Loss for {folder}: {loss:.4f}')
-        print(f'Validation Accuracy for {folder}: {accuracy:.4f}')
+if predicted_class_index in class_labels:
+    print(class_labels[predicted_class_index])
+else:
+    print("Class index not found in dictionary")
